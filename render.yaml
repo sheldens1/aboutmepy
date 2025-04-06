@@ -2,5 +2,9 @@ services:
   - type: web
     name: aboutmepy
     runtime: python
-    buildCommand: "pip install -r requirements.txt"
-    startCommand: "gunicorn app:app"
+    buildCommand: ""
+    startCommand: "python app.py"
+    envVars:
+      - key: FLASK_ENV
+        value: production
+    autoDeploy: true
